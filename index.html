@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PocketLedger</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>PocketLedger 💰</h1>
+
+    <!-- Opening Balance Form -->
+    <form id="balance-form">
+      <h2>💼 Opening Balance</h2>
+      <label for="opening-bank">🏦 Bank Balance (₹)</label>
+      <input type="number" id="opening-bank" placeholder="e.g. 10000" required />
+      <label for="opening-cash">💵 Cash Balance (₹)</label>
+      <input type="number" id="opening-cash" placeholder="e.g. 2000" required />
+      <button type="submit">Save Balance</button>
+    </form>
+
+    <!-- Transaction Form -->
+    <form id="entry-form">
+      <h2>➕ Add Transaction</h2>
+      <input type="date" id="date" required />
+      <input type="number" id="amount" placeholder="Amount (₹)" required />
+      <select id="source">
+        <option value="bank">Bank</option>
+        <option value="cash">Cash</option>
+      </select>
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <select id="category">
+        <option value="salary">Salary</option>
+        <option value="food">Food</option>
+        <option value="travel">Travel</option>
+        <option value="shopping">Shopping</option>
+        <option value="electricity">Electricity</option>
+      </select>
+      <textarea id="note" placeholder="Optional note (e.g. Uber, groceries)"></textarea>
+      <button type="submit">Add Entry</button>
+    </form>
+
+    <!-- Summary -->
+    <div class="summary">
+      <h2>Balance Summary</h2>
+      <p>💳 Bank: ₹<span id="bank-balance">0</span></p>
+      <p>💵 Cash: ₹<span id="cash-balance">0</span></p>
+      <p>🧾 Total: ₹<span id="total-balance">0</span></p>
+    </div>
+
+    <!-- Transaction Table -->
+    <h2>Transactions</h2>
+    <table id="transaction-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Source</th>
+          <th>Category</th>
+          <th>Note</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="transaction-list"></tbody>
+    </table>
+
+    <button onclick="exportToExcel()">📁 Export to Excel</button>
+  </div>
+
+  <!-- SheetJS CDN -->
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.0/package/dist/xlsx.full.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

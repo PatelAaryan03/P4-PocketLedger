@@ -1,0 +1,135 @@
+/* Modern Dark Theme: PocketLedger */
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #f0f0f0;
+  --accent-color: #4fd1c5;
+  --accent-hover: #38b2ac;
+  --border-color: #2a2a2a;
+  --warning-color: #e53e3e;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+form {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  margin-bottom: 30px;
+  display: grid;
+  gap: 12px;
+}
+
+input, select, button, textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2a2a2a;
+  color: var(--text-color);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent-color);
+  background-color: #333;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: #121212;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+}
+
+.summary {
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px var(--shadow-color);
+  margin-bottom: 30px;
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 8px var(--shadow-color);
+}
+
+#transaction-table th, #transaction-table td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#transaction-table th {
+  background-color: #262626;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+#transaction-table tr:last-child td {
+  border-bottom: none;
+}
+
+#transaction-table td button {
+  padding: 6px 10px;
+  font-size: 14px;
+  margin-right: 8px;
+  background-color: var(--accent-color);
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#transaction-table td button:hover {
+  background-color: var(--accent-hover);
+}
+
+#transaction-table td button:last-child {
+  background-color: var(--warning-color);
+  color: #fff;
+}
+
+#transaction-table td button:last-child:hover {
+  background-color: #c53030;
+}
